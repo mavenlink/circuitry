@@ -57,6 +57,10 @@ module Circuitry
       raise SubscribeError, e.message
     end
 
+    def unsubscribe
+      self.subscribed = false
+    end
+
     def subscribed?
       subscribed
     end
