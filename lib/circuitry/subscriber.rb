@@ -97,7 +97,9 @@ module Circuitry
       end
 
       trap('SIGTERM') do
-        unsubscribe_from_queue
+        Thread.new {
+          logger.info('SIGTERM_RECEIVED')
+        }
       end
     end
 
